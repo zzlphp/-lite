@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<view class="container">
+  <view bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{hello}}{{userInfo.nickName}}</text>
+  </view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_select">
+    <view class="weui-cell__bd">
+      <picker bindchange="selectcity" value="{{accountIndex}}" range="{{accounts}}">
+        <view class="weui-select">{{accounts[accountIndex]}}</view>
+      </picker>
+    </view>
+  </view>
+</view>
+<!--<view class="weui-btn-area">
+  <button class="weui-btn" type="primary" bindtap="find">确定</button>
+</view>-->
+<view class="page" style="margin-top:30rpx;">
+  <view class="page__bd">
+    <view class="weui-cells__title">{{city}}{{today}}油价</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd" style="color:red">95号汽油</view>
+        <view class="weui-cell__ft">¥ {{p95}} </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd" style="color:green">92号汽油</view>
+        <view class="weui-cell__ft">¥ {{p92}} </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">0号柴油</view>
+        <view class="weui-cell__ft">¥ {{p0}} </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">89号汽油</view>
+        <view class="weui-cell__ft">¥ {{p89}} </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">90号汽油</view>
+        <view class="weui-cell__ft">¥ {{p90}} </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">93号汽油</view>
+        <view class="weui-cell__ft">¥ {{p93}} </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">97号汽油</view>
+        <view class="weui-cell__ft">¥ {{p97}} </view>
+      </view>
+    </view>
+  </view>
+</view>
