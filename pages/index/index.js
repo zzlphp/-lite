@@ -87,7 +87,8 @@ Page({
     var that = this
     this.setData({
       city: this.data.accounts[e.detail.value],
-      accountIndex: e.detail.value
+      accountIndex: e.detail.value,
+      showLoading: true
     }),
     hotapp.onEvent("selectcity", this.data.accounts[e.detail.value])
     wx.request({
