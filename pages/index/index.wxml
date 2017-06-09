@@ -52,3 +52,7 @@
     </view>
   </view>
 </view>
+
+<view>
+    <loading wx:if="{{showLoading}}">加载中</loading>
+</view>

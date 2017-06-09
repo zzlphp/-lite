@@ -16,7 +16,8 @@ Page({
     p93: null,
     p97: null,
     city:'上海',
-    today: null    
+    today: null,
+    showLoading:true  
   },
   //事件处理函数
   bindViewTap: function() {
@@ -63,7 +64,7 @@ Page({
             accounts: arr
           })
       }
-    })
+    });
     wx.request({
       url: 'https://www.zzlphp.com/api/today/oilprice',
       success:function(res){
@@ -74,7 +75,10 @@ Page({
           p89: res.data[0].p89,
           p90: res.data[0].p90,
           p93: res.data[0].p93,
-          p97: res.data[0].p97
+          p97: res.data[0].p97,
+          accountIndex: res.data[0].key_index,
+          city: res.data[0].city,
+          showLoading:false
         })
       }
     })
@@ -97,7 +101,8 @@ Page({
           p89: res.data[0].p89,
           p90: res.data[0].p90,
           p93: res.data[0].p93,
-          p97: res.data[0].p97
+          p97: res.data[0].p97,
+          showLoading: false
         })
       }
     })
@@ -105,7 +110,7 @@ Page({
   onShareAppMessage: function () {
     return {
       title: '今日油价',
-      desc: '上海今日油价',
+      desc: '今日油价',
       path: '/pages/index/index'
     }
   }
