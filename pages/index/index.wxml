@@ -19,7 +19,7 @@
 </view>-->
 <view class="page" style="margin-top:30rpx;">
   <view class="page__bd">
-    <view class="weui-cells__title">{{city}}{{today}}油价</view>
+    <view class="weui-cells__title">{{city}}{{today}}油价 <text class="weui-cells__title_text">更新于:{{updatetime}}</text></view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
         <view class="weui-cell__bd" style="color:red">95号汽油</view>

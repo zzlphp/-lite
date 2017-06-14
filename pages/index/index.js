@@ -17,7 +17,8 @@ Page({
     p97: null,
     city:'上海',
     today: null,
-    showLoading:true  
+    showLoading:true,
+    updatetime:null 
   },
   //事件处理函数
   bindViewTap: function() {
@@ -78,6 +79,7 @@ Page({
           p97: res.data[0].p97,
           accountIndex: res.data[0].key_index,
           city: res.data[0].city,
+          updatetime: res.data[0].update_time,
           showLoading:false
         })
       }
@@ -103,6 +105,7 @@ Page({
           p90: res.data[0].p90,
           p93: res.data[0].p93,
           p97: res.data[0].p97,
+          updatetime: res.data[0].update_time,
           showLoading: false
         })
       }

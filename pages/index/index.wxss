@@ -52,3 +52,7 @@ page{
     text-align: left;
     font-size: 14px;
 }
+.weui-cells__title_text{
+  font-size:10px;
+  color:#d4d1d1
+}
