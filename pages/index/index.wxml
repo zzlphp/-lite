@@ -52,7 +52,9 @@
     </view>
   </view>
 </view>
-
+<view class="page__bd page__bd_spacing">
+        <button class="weui-btn" open-type="share" type="primary">分享给朋友</button>
+</view>        
 <view>
     <loading wx:if="{{showLoading}}">加载中</loading>
 </view>

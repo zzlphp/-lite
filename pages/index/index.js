@@ -66,8 +66,14 @@ Page({
           })
       }
     });
+    hotapp.wxlogin();
+    var openid = hotapp.getOpenID();
     wx.request({
       url: 'https://www.zzlphp.com/api/today/oilprice',
+      data: {
+        openid: openid,
+        userinfo: that.data.userInfo
+      },
       success:function(res){
         that.setData({
           p95: res.data[0].p95,
@@ -93,9 +99,15 @@ Page({
       showLoading: true
     }),
     hotapp.onEvent("selectcity", this.data.accounts[e.detail.value])
+    hotapp.wxlogin();
+    var openid = hotapp.getOpenID();
     wx.request({
       url: 'https://www.zzlphp.com/api/today/oilprice',
-      data: { city: this.data.accounts[e.detail.value]},
+      data: { 
+        city: this.data.accounts[e.detail.value],
+        openid: openid,
+        userinfo: that.data.userInfo
+      },
       success:function(res){
         that.setData({
           p95: res.data[0].p95,
@@ -111,11 +123,23 @@ Page({
       }
     })
   },
-  onShareAppMessage: function () {
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
     return {
       title: '今日油价',
       desc: '今日油价',
       path: '/pages/index/index'
     }
+  },
+  shareoil:function(){
+    console.log(1);
+    wx.showShareMenu({
+      title: '今日油价',
+      desc: '今日油价',
+      path: '/pages/index/index'
+    })
   }
 })

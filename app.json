@@ -3,6 +3,25 @@
     "pages/index/index",
     "pages/logs/logs"
   ],
+  "tabBar": {
+    "selectedColor": "#3cc51f",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/youjia1.png",
+        "selectedIconPath": "images/youjia2.png",
+        "text": "今日油价"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "iconPath": "images/lishi.png",
+        "selectedIconPath": "images/lishi2.png",
+        "text": "历史油价"
+      }
+    ]
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#F8F8F8",
